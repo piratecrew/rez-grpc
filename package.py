@@ -20,7 +20,7 @@ def variants():
     return [expand_requires(*requires)]
 
 tools = [
-    "flatc",
+    "protoc",
 ]
 
 def commands():
