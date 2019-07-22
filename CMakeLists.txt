@@ -34,6 +34,7 @@ set(GRPC_SOURCE_DIR ${source_dir})
 # without needing to add a submodule to your project.
 ExternalProject_Add(c-ares
   PREFIX c-ares
+  DOWNLOAD_COMMAND ""
   SOURCE_DIR "${GRPC_SOURCE_DIR}/third_party/cares/cares"
   CMAKE_CACHE_ARGS
         -DCARES_SHARED:BOOL=OFF
@@ -46,6 +47,7 @@ ExternalProject_Add(c-ares
 # Builds protobuf project from the git submodule.
 ExternalProject_Add(protobuf
   PREFIX protobuf
+  DOWNLOAD_COMMAND ""
   SOURCE_DIR "${GRPC_SOURCE_DIR}/third_party/protobuf/cmake"
   CMAKE_CACHE_ARGS
         -Dprotobuf_BUILD_TESTS:BOOL=OFF
@@ -58,6 +60,7 @@ ExternalProject_Add(protobuf
 # Builds zlib project from the git submodule.
 ExternalProject_Add(zlib
   PREFIX zlib
+  DOWNLOAD_COMMAND ""
   SOURCE_DIR "${GRPC_SOURCE_DIR}/third_party/zlib"
   CMAKE_CACHE_ARGS
         -DCMAKE_INSTALL_PREFIX:PATH=${CMAKE_INSTALL_PREFIX}
@@ -76,6 +79,7 @@ endif()
 # are correctly located.
 ExternalProject_Add(grpc
   PREFIX grpc
+  DOWNLOAD_COMMAND ""
   SOURCE_DIR "${GRPC_SOURCE_DIR}"
   CMAKE_CACHE_ARGS
         -DgRPC_INSTALL:BOOL=ON
